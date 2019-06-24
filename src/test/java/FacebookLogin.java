@@ -15,8 +15,8 @@ public class FacebookLogin {
     public static RemoteWebDriver driver;
     public static String urlTest = "https://www.facebook.com";
 
-    public static final String email = "maihoathao2004@yahoo.com";
-    public static final String pass = "Xanh$&@Ngoc654";
+    public static final String email = "*******";
+    public static final String pass = "*******";
 
     @BeforeClass(alwaysRun = true)
     @Parameters({"browser"})
