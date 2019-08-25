@@ -1,38 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Google Search Tests" verbose="1" parallel="tests">
-<!--    <parameter name="url" value="https://www.google.com/"/>-->
-<!--    <parameter name="node" value="http://localhost:4444/wd/hub"/>-->
-
-<!--    <test name="Tests on Firefox" preserve-order="true" group-by-instances="true">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="GoogleTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="Tests on Chrome" preserve-order="true" group-by-instances="true">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="GoogleSearch"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="test browser">-->
-<!--        <classes>-->
-<!--            <class name="MyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-    <test name="test browser 1">
+<suite name="Facebook Tests" verbose="1" parallel="tests">
+    <test name="Browser test 1 : Chrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="FacebookLogin"/>
+            <class name="testcase.FacebookTest"/>
         </classes>
     </test>
-    <test name="test browser 2">
+    <test name="Browser test 2 : FireFox">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="FacebookLogin"/>
+            <class name="testcase.FacebookTest"/>
         </classes>
     </test>
 

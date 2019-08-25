@@ -1,4 +1,9 @@
-package base;
+/*
+Setup test driver using Selenium Grid to run test browser parallel
+@author: Hoi
+Date Jun 25 19
+ */
+package utils;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -6,7 +11,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class SetupTestDriver {
+public class SetupUtil {
     private static String nodeUrl = "http://localhost:4444/wd/hub";
 
     public static DesiredCapabilities SetupBrowser(String browserType){
