@@ -12,7 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class SetupUtil {
-    private static String nodeUrl = "http://localhost:4444/wd/hub";
+//    private static String nodeUrl = "http://localhost:4444/wd/hub";
 
     public static DesiredCapabilities SetupBrowser(String browserType){
         if ("chrome".equals(browserType)) {
@@ -28,7 +28,8 @@ public class SetupUtil {
         System.out.println("Browser:" + browserType + "is invalid, Launching default browser is Firefox");
         return DesiredCapabilities.firefox();
     }
-    public static RemoteWebDriver getDriver(String browser) throws MalformedURLException {
+//    @Parameters({"nodeUrl"})
+    public static RemoteWebDriver getDriver(String browser, String nodeUrl) throws MalformedURLException {
         return new RemoteWebDriver(new URL(nodeUrl),SetupBrowser(browser));
     }
 }
