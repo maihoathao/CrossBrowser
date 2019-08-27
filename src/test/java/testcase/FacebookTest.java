@@ -24,11 +24,11 @@ public class FacebookTest {
 
     @BeforeClass(alwaysRun = true)
 
-    // Call test driver of Grid with browsers seting on testng
-    @Parameters({"browser"})
-    public void setUp(String browser) throws MalformedURLException{
+    // Call test driver of Grid with browsers setting on testng
+    @Parameters({"browser","nodeUrl"})
+    public void setUp(String browser, String nodeUrl) throws MalformedURLException{
         System.out.println("----START-----");
-        driver = SetupUtil.getDriver(browser);
+        driver = SetupUtil.getDriver(browser,nodeUrl);
     }
 
     // test login to facebook
@@ -43,11 +43,11 @@ public class FacebookTest {
             String pass = excelSheet.getRow(1).getCell(2).getStringCellValue();
             // Execute login
             driver.navigate().to(url);
-            System.out.println("Login to facebook" + url);
+            System.out.println("Login to: " + url);
             driver.findElement(LoginPage.email).sendKeys(email);
-            System.out.println("email login:"+email);
+            System.out.println("email: " + email);
             driver.findElement(LoginPage.password).sendKeys(pass);
-            System.out.println("Password login:" + pass);
+            System.out.println("Password: " + pass);
             driver.findElement(LoginPage.btnLogin).click();
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             System.out.println("login successful");
