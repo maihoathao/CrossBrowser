@@ -5,14 +5,19 @@ Date Jun 25 19
  */
 package utils;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class SetupUtil {
-//    private static String nodeUrl = "http://localhost:4444/wd/hub";
+    public static WebDriver driver;
 
     public static DesiredCapabilities SetupBrowser(String browserType){
         if ("chrome".equals(browserType)) {
@@ -28,8 +33,23 @@ public class SetupUtil {
         System.out.println("Browser:" + browserType + "is invalid, Launching default browser is Firefox");
         return DesiredCapabilities.firefox();
     }
-//    @Parameters({"nodeUrl"})
+
     public static RemoteWebDriver getDriver(String browser, String nodeUrl) throws MalformedURLException {
         return new RemoteWebDriver(new URL(nodeUrl),SetupBrowser(browser));
+    }
+
+    public static void explicitlyWait(WebDriver driver, By byObj){
+        WebDriverWait wait = new WebDriverWait(driver,10L);
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(byObj));
+//            wait.until(ExpectedConditions.invisibilityOfElementLocated(byObj));
+        }
+        catch (Exception ex){
+            System.out.println("Can see object after trying ");
+        }
+
+    }
+    public static void implicitlyWait(){
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 }
