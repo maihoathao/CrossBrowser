@@ -14,9 +14,12 @@ public class LoginPage {
      public static final By btnLogin = By.id("u_0_a");
 
    // Get element of Post text function
-    public static final By clickPostText = By.id("js_d");
-    public static final By editContent = By.cssSelector(".notranslate");
-    public static final By click = By.cssSelector(".\\_1mf7");
+//    public static final By clickPostText = By.id("js_d");
+//    public static final By editContent = By.cssSelector(".notranslate");
+//    public static final By click = By.cssSelector(".\\_1mf7");
+    public static final By clickPostText = By.id("js_g");
+    public static final By editContent = By.id("js_g");
+    public static final By click = By.xpath("//span[contains(.,'Post')]");
     public static final By textposted = By.cssSelector("#js_no p");
 
 }
