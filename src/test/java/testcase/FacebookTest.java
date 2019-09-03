@@ -5,9 +5,6 @@ Date: Jun 25 19
  */
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
 import utils.SetupUtil;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -15,7 +12,6 @@ import org.testng.annotations.*;
 import utils.ExcelUtil;
 
 import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 
 public class FacebookTest {
     public static RemoteWebDriver driver;
@@ -49,7 +45,7 @@ public class FacebookTest {
             driver.findElement(LoginPage.password).sendKeys(pass);
             System.out.println("Password: " + pass);
             driver.findElement(LoginPage.btnLogin).click();
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            SetupUtil.implicitlyWait();
             System.out.println("login successful");
         }catch (Exception e){
             System.out.println(e);
@@ -59,13 +55,12 @@ public class FacebookTest {
     @Test
     public void postText() throws MalformedURLException{
         try {
-            WebDriverWait wait = new WebDriverWait(driver,20);
             excelSheet = ExcelUtil.readExcel("/Users/maihoathao/Projects/CrossBrowser/src/main/resources/testdata.xlsx", "posttext");
             String posttext = excelSheet.getRow(1).getCell(1).getStringCellValue();
             driver.findElement(LoginPage.clickPostText).click();
             driver.findElement(LoginPage.editContent).sendKeys(posttext);
             driver.findElement(LoginPage.click).click();
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(LoginPage.textposted));
+            SetupUtil.explicitlyWait(driver,LoginPage.textposted);
             String textcompare = driver.findElement(LoginPage.textposted).getText();
             if(posttext == textcompare){
                 System.out.println("Post success: " + textcompare);
