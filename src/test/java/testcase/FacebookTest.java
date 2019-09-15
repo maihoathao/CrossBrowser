@@ -23,7 +23,7 @@ public class FacebookTest {
     // Call test driver of Grid with browsers setting on testng
     @Parameters({"browser","nodeUrl"})
     public void setUp(String browser, String nodeUrl) throws MalformedURLException{
-        System.out.println("----START-----");
+        System.out.println("-----START------");
         driver = SetupUtil.getDriver(browser,nodeUrl);
     }
 
