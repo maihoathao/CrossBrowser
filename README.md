@@ -33,6 +33,7 @@ note: neu may local khong setup may client test cung thi o step 4 khong chay -ro
 
 # ----------------------- Why using Docker instead Selenium Grid setup ----------
 (https://www.pawangaria.com/post/docker/selenium-webdriver-grid-with-docker/)
+
 Challenges :
 If you use Selenium Grid for running you test, You must have to install so many configurations and tools on each machine which your test depends on like Java, Selenium WebDriver, Test Browsers, VNC etc. Maintaining machines in grid are sometimes costly and time consuming to maintain.
 
