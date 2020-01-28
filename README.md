@@ -4,7 +4,7 @@
 3. Selenium Webdriver
 4. Testng
 5. Maven
-# SETUP to RUN -------------------
+# SETUP to RUN 
 Su dung docker-compose config toan bo chu khong can chay setung selenium grid rieng le
 1. Run docker-compose -> hien code nay dang su dung cach nay
 ( refer : https://www.pawangaria.com/post/docker/docker-compose-in-selenium-grid/)
@@ -17,10 +17,6 @@ file docker-compose.yml nay duoc dat trong thu muc cua project luon
 
 
 
-
-
-
---------------------
 # Setup Selenium Grid -> dung cho cach khong dung docker-compose
 1. Download “Selenium Standalone Server” from “http://www.seleniumhq.org/download/” on all 3 machines
 2. Goto machine 1 and open command prompt.
@@ -31,7 +27,7 @@ file docker-compose.yml nay duoc dat trong thu muc cua project luon
 
 note: neu may local khong setup may client test cung thi o step 4 khong chay -role hub
 
-# ----------------------- Why using Docker instead Selenium Grid setup ----------
+# Why using Docker instead Selenium Grid setup
 (https://www.pawangaria.com/post/docker/selenium-webdriver-grid-with-docker/)
 
 Challenges :
