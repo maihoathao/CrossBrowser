@@ -4,14 +4,16 @@
 3. Selenium Webdriver
 4. Testng
 5. Maven
------------------
+# SETUP to RUN -------------------
 Su dung docker-compose config toan bo chu khong can chay setung selenium grid rieng le
-# Run docker-compose -> hien code nay dang su dung cach nay
+1. Run docker-compose -> hien code nay dang su dung cach nay
 ( refer : https://www.pawangaria.com/post/docker/docker-compose-in-selenium-grid/)
 docker-compose up -d
 docker ps ( check selenium grid running)
 http://localhost:4444/grid/console? ( view config browser )
 
+file docker-compose.yml nay duoc dat trong thu muc cua project luon
+2. coding va run binh thuong
 
 
 
