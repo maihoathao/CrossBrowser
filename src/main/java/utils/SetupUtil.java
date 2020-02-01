@@ -39,10 +39,10 @@ public class SetupUtil {
     }
 
     public static void explicitlyWait(WebDriver driver, By byObj){
-        WebDriverWait wait = new WebDriverWait(driver,10L);
+        WebDriverWait wait = new WebDriverWait(driver,90);
         try {
             wait.until(ExpectedConditions.elementToBeClickable(byObj));
-//            wait.until(ExpectedConditions.invisibilityOfElementLocated(byObj));
+//            wait.until(ExpectedConditions.presenceOfElementLocated(byObj));
         }
         catch (Exception ex){
             System.out.println("Can see object after trying ");

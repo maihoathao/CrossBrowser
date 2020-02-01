@@ -2,6 +2,7 @@ version: '2'
 services:
   firefox:
     image: selenium/node-firefox:3.14.0-gallium
+#    image: selenium/node-firefox-debug
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
@@ -11,6 +12,7 @@ services:
 
   chrome:
     image: selenium/node-chrome:3.14.0-gallium
+#    image: selenium/node-chrome-debug
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
@@ -20,5 +22,6 @@ services:
 
   hub:
     image: selenium/hub:3.14.0-gallium
+#    image: selenium/hub:latest
     ports:
       - "4444:4444"
